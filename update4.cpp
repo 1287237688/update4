@@ -14,6 +14,17 @@ struct Judge
 	string name;
 	double score[5];
 }judge[7];
+bool lxg(Student &p1,Student &p2)
+{
+	if(p1.sum>p2.sum)
+	{
+		return true ;
+		
+	}else
+	{
+		return false;
+	}
+}
 
 int main()
 {
@@ -40,8 +51,8 @@ int main()
 			gen >> judge[n].name >>judge[n].score[0]>>judge[n].score[1]>>judge[n].score[2]>>judge[n].score[3]>>judge[n].score[4];
 		    n++;
 	 } 
- gen.close();
- int i=0,j=0;
+    gen.close();
+    int i=0,j=0;
  	for(i=0;i<5;i++) 
  	{
  		for(j=0;j<7;j++)
@@ -58,8 +69,8 @@ int main()
 			}
 			student[i].sum/=7;	
 	 }
-    sort 
- 
+    sort(student,student+5,lxg);
+    
  
 return 0;
 }
