@@ -11,11 +11,24 @@ string college;
 double mark[7];
 double sum;
 };
+
 struct Judge
 {
 	string name;
 	double score[5];
 };
+
+int lxg(Student &p1,Student &p2)
+{
+    if(p1.mark>p2.mark)
+    {
+	    return1;    
+    }
+    else
+    {
+	    return 0;
+    }	
+}
 
 int main()
 {
@@ -62,8 +75,7 @@ int main()
 			}
 			student[i].sum/=7;	
 	 }
+	sort(student,student+5,lxg);
     
- 
- 
 return 0;
 }
