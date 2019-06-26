@@ -8,15 +8,19 @@ string name;
 string sex;
 string major; 
 string college; 
-}student[5];
+double mark[7];
+double sum;
+};
 struct Judge
 {
 	string name;
 	double score[5];
-}judge[7];
+};
 
 int main()
 {
+	struct Student student[5];
+	struct Judge judge[7];
 	int n=0;
 	ifstream lin("D:\lin.txt");
     if (!lin.is_open())
@@ -54,11 +58,11 @@ int main()
  		sort(student[i].mark,student[i].mark+7);
 		for( j=1; j<6; i++ )
 		{
-			student[i].sum += student[i].score[j];
+			student[i].sum += student[i].mark[j];
 			}
 			student[i].sum/=7;	
 	 }
-    sort 
+    
  
  
 return 0;
