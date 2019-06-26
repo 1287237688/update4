@@ -22,7 +22,7 @@ int lxg(Student &p1,Student &p2)
 {
     if(p1.mark>p2.mark)
     {
-	    return1;    
+	    return 1;    
     }
     else
     {
