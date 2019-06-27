@@ -35,7 +35,8 @@ int main()
 	struct Student student[5];
 	struct Judge judge[7];
 	int n=0;
-	ifstream lin("D:\lin.txt");
+	ifstream lin("/Users/s20181105305/Desktop/lin.txt");
+	ofstream shuchu("/Users/s20181105305/Desktop/shuchu.txt");
     if (!lin.is_open())
     {
         cout<<"open error";
@@ -47,7 +48,7 @@ int main()
 	 } 
 	 lin.close();
 	 n=0;
-	 ifstream gen("D:\gen.txt");
+	 ifstream gen("/Users/s20181105305/Desktop/gen.txt");
     if (!gen.is_open())
     {
         cout<<"open error";
@@ -76,6 +77,20 @@ int main()
 			student[i].sum/=7;	
 	 }
 	sort(student,student+5,lxg);
-    
-return 0;
+        for(int i=0;i<5;i++)
+    {
+        cout<<student[i].college
+        <<" "
+        <<student[i].major
+        <<" "
+        <<student[i].number
+        <<" "
+        <<student[i].name
+        <<" "
+        <<student[i].sex
+        <<" "
+        <<student[i].sum
+        <<endl;
+    }
+    return 0;
 }
