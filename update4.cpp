@@ -42,14 +42,13 @@ int main()
     {
         cout<<"open error";
     }	
-    while(!lin.eof() && n<5)
-	{
+    if(!lin.eof() && n<5)
+	{for(n=0;n<5;n++)
 	lin >> student[n].number 
 		>> student[n].name
 		>> student[n].sex
 		>> student[n].major
-		>> student[n].college; 
-		n++;
+		>> student[n].college;
 	 } 	
 	 lin.close();
 	 n=0;
@@ -70,18 +69,17 @@ int main()
 	 } 	
 	
  gen.close();	
- int i=0,j=0;
- 	for(i=0;i<5;i++) 
+ 	for(int i=0;i<5;i++) 
  	{
- 		for(j=0;j<7;j++)
+ 		for(int j=0;j<7;j++)
  		{
  			student[i].mark[j]=judge[j].score[i];
 		 }
 	 }	
- 	for(i=0;i<5;i++)
+ 	for(int i=0;i<5;i++)
  	{
  		sort( student[i].mark, student[i].mark+7);
-		for( j=1; j<6; j++ )
+		for( int j=1; j<6; j++ )
 		{
 			student[i].sum += student[i].mark[j];
 			}
@@ -97,7 +95,7 @@ int main()
 			  <<student[i].sex
 			  <<student[i].sum
 			  <<endl;
-		
+			  
 	} 	
 	for(int i=0;i<5;i++)
 	{
