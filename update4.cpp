@@ -45,7 +45,7 @@ int main()
     if(!lin.eof() && n<5)
 	{for(n=0;n<5;n++)
 	lin >> student[n].number 
-		>> student[n].name
+		 >> student[n].name
 		>> student[n].sex
 		>> student[n].major
 		>> student[n].college;
@@ -57,15 +57,14 @@ int main()
     {
         cout<<"open error";
     }	
-    while(!gen.eof() && n<7)
-	{
+    if(!lin.eof() && n<5)
+	{    for(n=0;n<5;n++)
 		 gen >> judge[n].name
 			 >>judge[n].score[0]
 			 >>judge[n].score[1]
 			 >>judge[n].score[2]
 			 >>judge[n].score[3]
 			 >>judge[n].score[4];
-		    n++;
 	 } 	
 	
  gen.close();	
@@ -83,7 +82,7 @@ int main()
 		{
 			student[i].sum += student[i].mark[j];
 			}
-			student[i].sum/=5;	
+			student[i].sum/=7;	
 	 }
 	sort(student,student+5,lxg);	
 	for(int i=0;i<5;i++)
@@ -106,6 +105,6 @@ int main()
 		<<" "<<student[i].sex
 		<<" "<<student[i].sum
 		<<endl;
-	} 	
+	} 	 
 	return 0;
 }
