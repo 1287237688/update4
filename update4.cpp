@@ -87,7 +87,7 @@ int main()
 	sort(student,student+5,lxg);	
 	for(int i=0;i<5;i++)
 	{
-		readto<<<<student[i].college
+	       readto<<student[i].college
 		<<" "<<student[i].major
 		<<" "<<student[i].number
 		<<" "<<student[i].name
@@ -98,7 +98,7 @@ int main()
 	} 	
 	for(int i=0;i<5;i++)
 	{
-		 cout<<student[i].college
+	         cout<<student[i].college
 		<<" "<<student[i].major
 		<<" "<<student[i].number
 		<<" "<<student[i].name
