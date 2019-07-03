@@ -11,13 +11,13 @@ string major;
 string college; 
 double mark[7];
 double sum;
-}Student student[5];;
+};
 
 struct Judge
 {
 	string name;
 	double score[5];
-}Judge judge[7];
+};
 
 int lxg(Student &p1,Student &p2)
 {
@@ -32,8 +32,10 @@ int lxg(Student &p1,Student &p2)
 }
 
 int main()
-{
+{ 
 	int n=0;
+	Student student[5];
+	Judge judge[7];
 	ifstream readin("/Users/s20181105305/Desktop/readin.txt");
 	ofstream readto("/Users/s20181105305/Desktop/readto.txt");
     if (!readin.is_open())
