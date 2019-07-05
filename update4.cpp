@@ -127,7 +127,7 @@ int main()
 	} 	
 	
 	for(int i=0;i<STUDENT;i++)
-	{
+	{ 
 		 cout<<student[i].college
 		<<" "<<student[i].major
 		<<" "<<student[i].number
@@ -137,4 +137,4 @@ int main()
 		<<endl;
 	} 	 
 	return 0;
-}
+} 
