@@ -39,9 +39,9 @@ int main()
 {
 	Student student[STUDENT];
 	Judge judge[JUDGE];	
-	int n=0;
+	int n=0,a=1;
 	ifstream read_student("D:\lin.txt");
-	ofstream outcome("D:\shuchu.xl");
+	ofstream outcome("D:\shuchu.txt");
     if (!read_student.is_open())
     {
         cout<<"open error";
@@ -69,35 +69,34 @@ int main()
 	    for(n=0;n<JUDGE;n++)
 		{
 		 read_teacher >> judge[n].name
-		     >> judge[n].telephone_number
-		     >> judge[n].idfamily;
+		              >> judge[n].telephone_number
+		              >> judge[n].idfamily;
 		     for(int i=0;i<STUDENT;i++)
 		 read_teacher >>judge[n].score[i];			
 		}
 	 } 	
  	read_teacher.close();
- 	cout<<"老师的手机号码和家庭住址："<<endl; 
+ 	outcome<<"老师的手机号码和家庭住址："<<endl; 
 	for(int i=0;i<JUDGE;i++)
 	{
-	    cout<<judge[i].name<<" " 
+	 outcome<<judge[i].name<<" " 
 			<<judge[i].telephone_number<<" " 
 			<<judge[i].idfamily
 			<<endl;
 	}
-	cout<<endl;	
-	cout<<"老师给每位学生的分数："<<endl; 
+	outcome<<endl;	
+	outcome<<"老师给每位学生的分数："<<endl; 
 	for(int i=0; i<JUDGE; i++)
 	{
-		cout<<judge[i].name<<endl;
+		outcome<<judge[i].name<<endl;
 		for(int j=0; j<STUDENT; j++)
 		{
-			cout<<student[j].name;
-			cout<<judge[i].score[j]<<"  ";
+			outcome<<student[j].name;
+			outcome<<judge[i].score[j]<<"  ";
 		} 
-		cout<<endl;
+		outcome<<endl;
 	}
-	cout<<endl;
-	cout<<"学生的个人信息以及最后平均分："<<endl; 
+	outcome<<endl;
  	for(int i=0;i<STUDENT;i++) 
  	{
  		for(int j=0;j<JUDGE;j++)
@@ -111,30 +110,37 @@ int main()
 		for( int j=1; j<JUDGE-1; j++ )
 		{
 			student[i].sum += student[i].mark[j];
-			}
-			student[i].sum/=(JUDGE-2);	
+		}
+			student[i].sum/=5;	
 	 }
-	sort(student,student+STUDENT,decide);	
+	sort(student,student+STUDENT,decide);
+	outcome<<"学生的个人信息以及最后平均分："<<endl;	
+	cout<<"学生的个人信息以及最后平均分："<<endl; 
 	for(int i=0;i<STUDENT;i++)
 	{
-		outcome<<student[i].college
-		       <<student[i].major
-			   <<student[i].number
-			   <<student[i].name
-			   <<student[i].sex
-			   <<student[i].sum
-			   <<endl;	  
+		outcome<<a
+	    <<" "<<student[i].college
+		<<" "<<student[i].major
+		<<" "<<student[i].number
+		<<" "<<student[i].name
+		<<" "<<student[i].sex
+		<<" "<<student[i].sum
+		<<endl; 
+		a++; 
 	} 	
 	
+	a=1;
 	for(int i=0;i<STUDENT;i++)
 	{ 
-		 cout<<student[i].college
+		 cout<<a
+	    <<" "<<student[i].college
 		<<" "<<student[i].major
 		<<" "<<student[i].number
 		<<" "<<student[i].name
 		<<" "<<student[i].sex
 		<<" "<<student[i].sum
 		<<endl;
+		a++;
 	} 	 
 	return 0;
 } 
